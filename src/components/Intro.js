@@ -12,6 +12,8 @@ export class Intro extends Component {
           id="carouselExampleIndicators"
           class="carousel slide"
           data-bs-ride="carousel"
+          // data-wrap="tru e"
+          data-interval="20"
         >
           <div class="carousel-indicators">
             <button

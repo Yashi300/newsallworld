@@ -15,19 +15,10 @@ export class NavBar extends Component {
           style={{ background: "black", borderBottom: "1px solid #fff" }}
         >
           <div className="container-fluid">
-            <Link
-              style={{
-                fontFamily: "ariea",
-                fontSize: "30px",
-                fontWeight: "bold",
-              }}
-              className="navbar-brand"
-              to="/"
-            >
+            <Link style={{ fontFamily: "ariea", fontSize: "30px",fontWeight: "bold",}} className="navbar-brand" to="/">
               NewsBooster
             </Link>
-            <button
-              className="navbar-toggler"
+            <button className="navbar-toggler"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#navbarSupportedContent"
@@ -97,7 +88,7 @@ export class NavBar extends Component {
                   </Link>
                 </li>
                 <li
-                  style={{ padding: "11px 30px", fontSize: "18px" }}
+                  style={{ padding: "11px 3px", fontSize: "18px" }}
                   className="nav-item"
                 >
                   <Link className="nav-link" to="/technology">
@@ -121,9 +112,9 @@ export class NavBar extends Component {
                   >
                     <option value="in">india</option>
                     <option value="us">USA</option>
-                    <option value="it">Italy</option>
-                    <option value="jp">Japan</option>
-                    <option value="ch">China</option>
+                    <option value="au">Australia</option>
+                    <option value="sg">Singapore</option>
+                    <option value="gb">United kingdom</option>
                   </select>
                 </li>
               </ul>

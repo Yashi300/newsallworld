@@ -13,16 +13,12 @@ import {
 
 export default class App extends Component {
 
-  constructor(){
-    super()
-    this.state = {
-       country : "in"
-    };
-}
+  state = {
+    country : "in"
+  }
 
-  countryChange =async (co)=>{
-    this.setState({country : co});
-    console.log(this.state.country);
+  countryChange = (co)=>{
+    this.setState({country : co})
     }
   
   render() {
@@ -32,7 +28,7 @@ export default class App extends Component {
         <NavBar countryChange={this.countryChange}/>
         <Intro/>
         <Routes>
-        <Route exact path="/" element={<News key="general" pageSize={6} country={this.state.country} category="general"/>}></Route>
+        <Route exact path="/" element={<News key="top" pageSize={6} country={this.state.country} category="top"/>}></Route>
           <Route exact path="/business" element={<News key="business" pageSize={6} country={this.state.country} category="business"/>}></Route>
           <Route exact path="/entertainment" element={<News key="entertainment" pageSize={6} country={this.state.country} category="entertainment"/>}></Route>
           <Route exact path="/health" element={<News key="health" pageSize={6} country={this.state.country} category="health"/>}></Route>
@@ -46,5 +42,4 @@ export default class App extends Component {
     )
   }
 }
-
 

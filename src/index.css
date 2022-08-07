@@ -10,6 +10,7 @@
   color:grey;
   font-size: 30px;
   text-shadow: none;
+  transition: all 0.3s ease;
 }
 .navbar a{
   text-shadow: 3px 4px 3px black;
@@ -23,7 +24,7 @@
 .navbar label{
   text-shadow: 3px 4px 3px black;
   text-decoration: none;
-  padding: 9px 5px;
+  padding: 9px 5px 9px 17px;
   color: white;
   font-family: 'Moon Dance', cursive;
   font-size: 23px;
