@@ -114,7 +114,7 @@ export class NavBar extends Component {
                     <option value="us">USA</option>
                     <option value="au">Australia</option>
                     <option value="sg">Singapore</option>
-                    <option value="gb">United kingdom</option>
+                    <option value="gb">United Kingdom</option>
                   </select>
                 </li>
               </ul>
