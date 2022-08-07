@@ -25,40 +25,31 @@ export class News extends Component {
     };
   }
 
+  async updateNews(){
+    this.props.setProgress(10);
+    let url=`https://newsdata.io/api/1/news?apikey=pub_99705e2e1d16f3534d9f7a3a0a155f4af694&country=${this.props.country}&category=${this.props.category}&page=${this.state.page}&language=en`;
+    this.setState({loading : true})
+    let data1 = await fetch(url);
+    this.props.setProgress(30);
+    let parsedData = await data1.json();
+    this.props.setProgress(70);
+    this.setState({results : parsedData.results, totalResults : parsedData.totalResults, loading : false})
+    this.props.setProgress(100);
+  }
+
 //life-cycle method , runs after the execution of render
 async componentDidMount(){
-  let url=`https://newsdata.io/api/1/news?apikey=pub_99705e2e1d16f3534d9f7a3a0a155f4af694&country=${this.props.country}&category=${this.props.category}&page=${this.state.page}&language=en`;
-  this.setState({loading : true})
-  let data1 = await fetch(url);
-  let parsedData = await data1.json();
-  console.log(parsedData);
-  this.setState({results : parsedData.results, totalResults : parsedData.totalResults, loading : false})
+  this.updateNews();
 }
 
 prePage =async () =>{
-  let url=`https://newsdata.io/api/1/news?apikey=pub_99705e2e1d16f3534d9f7a3a0a155f4af694&country=${this.props.country}&category=${this.props.category}&page=${this.state.page - 1}&language=en`;
-  this.setState({loading : true})
-let data1 = await fetch(url);
-let parsedData = await data1.json();
-console.log(parsedData);
-this.setState({
-  results : parsedData.results,
-  page : this.state.page - 1,
-  loading : false
-})
+  this.setState({page: this.state.page - 1});
+  this.updateNews();
 }
 
 nexPage =async () =>{
-  let url=`https://newsdata.io/api/1/news?apikey=pub_99705e2e1d16f3534d9f7a3a0a155f4af694&country=${this.props.country}&category=${this.props.category}&page=${this.state.page + 1}&language=en`;
-  this.setState({loading : true})
-let data1 = await fetch(url);
-let parsedData = await data1.json();
-console.log(parsedData);
-this.setState({
-  results : parsedData.results,
-  page : this.state.page + 1,
-  loading : false
-})
+  this.setState({page: this.state.page + 1});
+  this.updateNews();
 }
 fetchMoreData =async () => {
   this.setState({page : this.state.page + 1})
